@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
 import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const SERVICE_ID = "service_8b9vnar";
@@ -16,7 +16,6 @@ const Contact = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -61,7 +60,6 @@ const Contact = () => {
       message: formData?.message || "--",
       company: formData?.company || "--",
     };
-
     try {
       await emailjs.send(SERVICE_ID, TEMPLATE_ID, formattedData, PUBLIC_KEY);
       setFormData({
@@ -72,9 +70,12 @@ const Contact = () => {
         projectType: "",
         message: "",
       });
+      toast("Details submitted successfully!", { type: "success" });
       setIsSubmitting(false);
     } catch (error) {
       setIsSubmitting(false);
+      toast("Error submitting details!", { type: "error" });
+
       console.error("Failed to send email:", error);
     }
   };
