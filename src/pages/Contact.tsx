@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const SERVICE_ID = "service_8b9vnar";
+  const TEMPLATE_ID = "template_fwhaa4s";
+  const PUBLIC_KEY = "gmCA3DI9aUIdzthiJ";
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -49,13 +53,17 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message Sent Successfully!",
-        description:
-          "Thank you for your inquiry. We'll get back to you within 24 hours.",
-      });
+    const formattedData = {
+      name: formData?.name || "--",
+      email: formData?.email || "--",
+      phone: formData?.phone || "--",
+      projectType: formData?.projectType || "--",
+      message: formData?.message || "--",
+      company: formData?.company || "--",
+    };
+
+    try {
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, formattedData, PUBLIC_KEY);
       setFormData({
         name: "",
         email: "",
@@ -65,7 +73,10 @@ const Contact = () => {
         message: "",
       });
       setIsSubmitting(false);
-    }, 2000);
+    } catch (error) {
+      setIsSubmitting(false);
+      console.error("Failed to send email:", error);
+    }
   };
 
   return (
