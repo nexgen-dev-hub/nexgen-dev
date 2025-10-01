@@ -11,7 +11,7 @@ const Footer = () => {
             <div className="flex items-center space-x-3">
               <div className="w-full h-44 rounded-xl flex items-center ">
                 <img
-                  src="/logof.png"
+                  src="/finallogo.png"
                   alt="NexGen Logo"
                   className="w-full h-full object-contain"
                 />
