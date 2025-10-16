@@ -123,7 +123,7 @@ const Contact = () => {
                   {
                     icon: Mail,
                     title: "Email",
-                    info: "info@nexgensouthern.com",
+                    info: "info@nexgen-developers.com",
                     description: "Send us your project details",
                   },
                   {

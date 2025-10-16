@@ -85,7 +85,7 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-accent flex-shrink-0" />
                 <span className="text-sm opacity-80">
-                  info@nexgensouthern.com
+                  info@nexgen-developers.com
                 </span>
               </div>
             </div>
