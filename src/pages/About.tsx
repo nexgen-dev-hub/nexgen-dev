@@ -121,7 +121,7 @@ const About = () => {
                 experience:
                   "Driving efficiency and excellence in every project",
                 background:
-                  "Over 15 years in manufacturing and logistics, with deep family roots in construction and shipping. Saman specializes in streamlining supply chains and accelerating timelines. Former VP at Turner Construction, he brings proven leadership in delivering complex builds. His strong work ethic and operational vision drive results at scale.",
+                  "Sami’s upbringing in a family deeply immersed in manufacturing, shipping, and construction has endowed him with a profound understanding of the industry, enabling valuable contributions to successful building projects. With a strong work ethic and passion inherited from his family’s expertise, Sami adeptly navigates industry complexities, driving results and efficiency. Over 15 years dedicated to manufacturing and logistics, he excels in streamlining processes, optimizing supply chains, and ensuring consistent project execution. Sami’s commitment to efficiency and speed maximizes productivity and minimizes downtime, ensuring smooth and successful project outcomes.",
                 image: staff,
               },
               {
